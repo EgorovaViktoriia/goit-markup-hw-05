@@ -16,6 +16,10 @@
   --white-color: #ffffff;
 }
 
+:root {
+  --function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 body {
   font-family: "Roboto", sans-serif;
   color: var(--primary-text-color);
@@ -87,6 +91,7 @@ a {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--tittle-text-color);
+  transition: color 250ms var(--function);
 }
 
 .nav .link:hover,
@@ -110,6 +115,21 @@ a {
   margin-right: 50px;
 }
 
+.link.main::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+
+.item-header {
+  position: relative;
+}
+
 .contacts-link-header {
   padding-top: 32px;
   padding-bottom: 32px;
@@ -121,10 +141,12 @@ a {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--primary-text-color);
+  transition: color 250ms var(--function);
 }
 .email-phone {
   margin-right: 10px;
   fill: currentColor;
+  transition: color 250ms var(--function);
 }
 .email-phone:hover,
 .email-phone:focus {
@@ -278,6 +300,28 @@ a {
   padding-top: 94px;
 }
 
+/* Позиционирование секции чем мы занимаемся  */
+
+.items {
+  position: relative;
+}
+.items .upper-subtitle {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 27px 0;
+  margin: 0;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  color: var(--white-color);
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  background-color: rgba(47, 48, 58, 0.8);
+}
 /* Секция Наша команда  */
 .section {
   padding-top: 94px;
@@ -355,6 +399,8 @@ a {
   border-radius: 50%;
   color: #afb1b8;
   fill: currentColor;
+  transition: background-color 250ms var(--function),
+    color 250ms var(--function);
 }
 
 /* Секция наши клиенты */
@@ -397,6 +443,8 @@ a {
   width: 100%;
   height: 100%;
   color: #afb1b8;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-list .clients-item {
@@ -483,6 +531,7 @@ address {
   height: 44px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-icon-footer {
   width: 20px;
@@ -523,6 +572,9 @@ address {
   background: #f5f4fa;
   border-radius: 4px;
   padding: 6px 22px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .list-button .button-list-li:not(:last-child) {
   margin-right: 8px;
@@ -552,6 +604,7 @@ address {
   padding-top: 94px;
   padding-bottom: 94px;
 }
+
 /* .proj-item {
   width: calc((100%-60px) / 3);
   margin-right: 30px;
@@ -611,4 +664,59 @@ address {
 .project-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.overlay::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 150, 243, 0.9);
+}
+.img-overlay {
+  position: relative;
+  overflow: hidden;
+}
+.text {
+  position: absolute;
+  top: 63px;
+  left: 24px;
+  margin: 0;
+  width: 322px;
+  height: 168px;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.55;
+  letter-spacing: 0.03em;
+
+  color: var(--white-color);
+}
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.proj-item:hover .overlay {
+  transform: translateY(0%);
+}
+
+.proj-item {
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.project-link:focus .overlay {
+  transform: translateY(0%);
+}
+
+.project-link {
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }

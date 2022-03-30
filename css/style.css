@@ -146,7 +146,6 @@ a {
 .email-phone {
   margin-right: 10px;
   fill: currentColor;
-  transition: color 250ms var(--function);
 }
 .email-phone:hover,
 .email-phone:focus {
@@ -165,7 +164,7 @@ a {
   padding-top: 200px;
   background-color: #2f303a;
 }
-.overlay {
+.overlay-hero {
   height: 600px;
   max-width: 1600px;
   margin-left: auto;
@@ -399,8 +398,7 @@ a {
   border-radius: 50%;
   color: #afb1b8;
   fill: currentColor;
-  transition: background-color 250ms var(--function),
-    color 250ms var(--function);
+  transition: background-color 250ms var(--function), fill 250ms var(--function);
 }
 
 /* Секция наши клиенты */

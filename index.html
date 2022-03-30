@@ -61,7 +61,14 @@
           Эффективные решения<br />
           для вашего бизнеса
         </h1>
-        <button class="button" type="button">Заказать услугу</button>
+        <button data-modal-open class="button" type="button">Заказать услугу</button>
+        <div data-modal  class="backdrop is-hidden">
+          <div class="modal" ></div>
+          <button data-modal-close class="close-button">
+            <svg class="btn-close" width="30" height="30" > </svg>
+            <use href="./images/close-button.svg#icon-close-button"></use>
+          </button>
+        </div>
       </section>
       <!-- Секция Преимущества -->
       <section class="no-title">

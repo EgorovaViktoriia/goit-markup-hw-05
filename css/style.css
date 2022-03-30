@@ -739,12 +739,13 @@ address {
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
   z-index: 2;
-  transition: opacity 250ms var(--function);
-}
+  transition: visibility 250ms var(--function), opacity 250ms var(--function);
+  }
 
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
+  visibility: hidden;
 }
 
 .modal {
@@ -765,7 +766,7 @@ address {
 
 .close-button {
   position: absolute;
-  right: o;
+  right: 0;
   width: 30px;
   height: 30px;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -775,8 +776,10 @@ address {
 }
 
 .btn-close {
+
   position: absolute;
   top: 50%;
   left: 50%;
+ 
   transform: translate(-50%, -50%);
 }

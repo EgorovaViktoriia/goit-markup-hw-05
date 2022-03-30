@@ -164,6 +164,7 @@ a {
   min-height: 80px;
   top: 0;
   background-color: var(--white-color);
+  z-index: 2;
 }
 
 /* Секция Главная страница */

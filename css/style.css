@@ -23,6 +23,7 @@
 body {
   font-family: "Roboto", sans-serif;
   color: var(--primary-text-color);
+  padding-top: 80px;
 }
 ul {
   list-style: none;
@@ -155,6 +156,14 @@ a {
 .contacts-link-header:hover,
 .contacts-link-header:focus {
   color: var(--accent-color);
+}
+
+.page-header {
+  position: fixed;
+  width: 100%;
+  min-height: 80px;
+  top: 0;
+  background-color: var(--white-color);
 }
 
 /* Секция Главная страница */
